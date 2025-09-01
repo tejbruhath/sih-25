@@ -1,0 +1,43 @@
+AGRICULTURAL TECHNOLOGY INTERN - AGRISMART
+
+COMPANY OVERVIEW:
+AgriSmart is transforming Indian agriculture through innovative technology solutions. We develop IoT-based farming systems, precision agriculture tools, and data-driven crop management platforms for farmers across India.
+
+ROLE DESCRIPTION:
+Join our technology team to work on cutting-edge agricultural solutions that directly impact farmers' livelihoods. You'll develop and deploy technology solutions that make farming more efficient, sustainable, and profitable.
+
+KEY RESPONSIBILITIES:
+- Develop IoT solutions for smart farming and precision agriculture
+- Work with sensor data, weather APIs, and agricultural databases
+- Design mobile applications for farmers and agricultural workers
+- Conduct field testing and validation of agricultural technologies
+- Analyze agricultural data to provide insights and recommendations
+- Collaborate with agronomists and field experts
+
+REQUIRED SKILLS:
+- Background in agricultural engineering, technology, or related field
+- Programming experience in Python, Java, or similar languages
+- Understanding of IoT systems, sensors, and data collection
+- Knowledge of agricultural practices and farming systems
+- Data analysis and statistical skills
+- Strong problem-solving and field work capabilities
+
+PREFERRED QUALIFICATIONS:
+- Experience with precision agriculture technologies
+- Knowledge of GIS mapping and remote sensing
+- Understanding of crop science and agronomy
+- Experience with mobile app development
+- Familiarity with drone technology and aerial imaging
+- Rural background or experience working with farmers
+
+WHAT YOU'LL GAIN:
+- Hands-on experience with agricultural technology and innovation
+- Direct impact on farmer welfare and agricultural productivity
+- Exposure to latest AgTech trends and IoT applications
+- Field experience working with farmers and rural communities
+- Opportunity to contribute to India's agricultural transformation
+
+LOCATION: Chennai, Tamil Nadu
+DURATION: 6 months
+STIPEND: ₹18,000 per month
+START DATE: January 2025

@@ -1,0 +1,42 @@
+DATA ANALYST INTERN - FINANCEMAX
+
+COMPANY OVERVIEW:
+FinanceMax is a leading financial services company providing investment advisory, wealth management, and financial planning services to over 2 million clients across India.
+
+ROLE DESCRIPTION:
+Join our analytics team to work on data-driven insights that shape our investment strategies and client recommendations. You'll work with large financial datasets to identify trends and patterns.
+
+KEY RESPONSIBILITIES:
+- Analyze financial market data and client portfolios
+- Create comprehensive reports and visualizations for stakeholders
+- Develop predictive models for investment performance
+- Support risk assessment and compliance reporting
+- Build automated dashboards for real-time monitoring
+- Collaborate with finance teams to interpret data insights
+
+REQUIRED SKILLS:
+- Strong analytical and quantitative skills
+- Proficiency in data analysis tools (Python, R, SQL)
+- Experience with data visualization tools (Tableau, Power BI, Excel)
+- Understanding of statistical concepts and methods
+- Knowledge of financial markets and investment principles
+- Excellent communication and presentation skills
+
+PREFERRED QUALIFICATIONS:
+- Experience with machine learning algorithms
+- Knowledge of financial modeling and valuation techniques
+- Familiarity with compliance and regulatory requirements
+- Understanding of portfolio management concepts
+- Experience with big data tools and cloud platforms
+
+WHAT YOU'LL GAIN:
+- Deep understanding of financial markets and investment strategies
+- Experience with real-world financial data and analytics
+- Mentorship from experienced analysts and portfolio managers
+- Exposure to client-facing business scenarios
+- Industry-recognized certifications and training programs
+
+LOCATION: Mumbai, Maharashtra
+DURATION: 6 months
+STIPEND: ₹22,000 per month
+START DATE: January 2025

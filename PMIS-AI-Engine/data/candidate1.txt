@@ -1,0 +1,41 @@
+RAHUL SHARMA
+Software Engineer | Full Stack Developer
+
+EDUCATION:
+Bachelor of Technology in Computer Science
+Indian Institute of Technology, Delhi (2021-2025)
+CGPA: 8.2/10
+
+TECHNICAL SKILLS:
+Programming Languages: Python, Java, JavaScript, C++
+Web Technologies: React, Node.js, Express.js, HTML5, CSS3
+Databases: MySQL, MongoDB, PostgreSQL
+Tools & Frameworks: Git, Docker, Flask, Django
+Machine Learning: Scikit-learn, TensorFlow, Pandas, NumPy
+
+PROJECTS:
+1. E-Commerce Platform (2024)
+   - Built a full-stack web application using React and Node.js
+   - Implemented user authentication, payment integration, and inventory management
+   - Technologies used: React, Node.js, MongoDB, Stripe API
+
+2. Stock Price Prediction Model (2023)
+   - Developed ML model to predict stock prices using historical data
+   - Achieved 85% accuracy using LSTM neural networks
+   - Technologies used: Python, TensorFlow, Pandas, NumPy
+
+EXPERIENCE:
+Software Development Intern at CodeCraft Solutions (Summer 2023)
+- Developed REST APIs for mobile application backend
+- Collaborated with team of 5 developers using Agile methodology
+- Improved application performance by 30% through code optimization
+
+ACHIEVEMENTS:
+- Winner of National Level Hackathon "InnovateTech 2023"
+- Published research paper on "Optimizing Database Queries using AI"
+- Active contributor to open-source projects on GitHub (500+ commits)
+
+CERTIFICATIONS:
+- AWS Certified Cloud Practitioner
+- Google Analytics Certified
+- Oracle Database SQL Certified

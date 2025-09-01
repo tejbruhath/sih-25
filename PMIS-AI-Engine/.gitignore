@@ -1,0 +1,146 @@
+# PMIS-AI Smart Allocation Engine - Git Ignore
+# =============================================
+
+# 🔒 CRITICAL: Environment & Secrets (NEVER COMMIT!)
+.env
+.env.local
+.env.production
+.env.staging
+*.pem
+*.key
+*.crt
+secrets/
+config/local.py
+
+# 🤖 AI Model Cache & Data
+data/embeddings_cache.pkl
+data/*_cache.pkl
+data/models/
+*.pt
+*.pth
+*.onnx
+
+# 📊 Generated Results & Logs
+data/allocation_results_*.json
+data/final_allocation.json
+data/blockchain_trust_records.json
+logs/
+*.log
+*.log.*
+
+# 📁 Uploaded Files (contain personal data)
+data/uploads/
+data/resumes/
+uploads/
+temp/
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 🌐 Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# 🔧 IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 📊 Data Files (may contain personal information)
+data/candidates_real.csv
+data/internships_real.csv
+data/candidate_*.pdf
+data/resume_*.pdf
+data/*_personal.csv
+
+# 🧪 Test Results
+test_results/
+coverage/
+.coverage
+.pytest_cache/
+.tox/
+
+# 📦 Package Files
+*.tar.gz
+*.zip
+*.rar
+
+# 🔐 Backup Files
+backups/
+*.backup
+*.bak
+
+# 🌊 Flask
+instance/
+.webassets-cache
+
+# 📱 Node.js (if you add frontend framework later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🏗️ Build artifacts
+build/
+dist/
+
+# 📈 Jupyter Notebooks (if you create any)
+.ipynb_checkpoints
+
+# 🔍 OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 🔐 SSL Certificates
+*.pem
+*.crt
+*.ca-bundle
+
+# 📊 Database Files (if you add database)
+*.db
+*.sqlite
+*.sqlite3
+
+# 🎯 Production configs
+docker-compose.override.yml
+.dockerignore
+
+# 🔄 Temporary files
+tmp/
+temp/
+*.tmp
