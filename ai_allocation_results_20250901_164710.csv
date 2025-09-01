@@ -1,0 +1,6 @@
+candidate_id,candidate_name,age,social_category,is_rural,candidate_skills_count,internship_id,company_name,job_title,sector,location,required_skills_count,ml_suitability_score,ai_processed_candidate,ai_processed_internship
+3,Rahul Kumar,21,SC,True,2,2,Green Energy Solutions,Renewable Energy Analyst,Energy,Mumbai,0,0.2211,True,True
+2,Priya Patel,23,OBC,True,3,1,TechCorp India,Software Developer Intern,Technology,Bangalore,0,0.0103,True,True
+12,Pooja Mishra,24,SC,False,0,4,HealthTech Innovations,Healthcare Data Analyst,Healthcare,Hyderabad,0,0.0002,False,False
+1,Arjun Sharma,22,General,False,7,3,FinanceFirst,Financial Analyst Intern,Finance,Delhi,0,0.0009,True,True
+8,Anita Yadav,24,SC,True,0,6,EduTech Platform,Education Technology Intern,Education,Chennai,0,0.0001,False,False

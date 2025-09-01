@@ -136,8 +136,8 @@ class StableMatchingAlgorithm:
         
         return candidate_preferences, boosted_internship_preferences
 
-    def run_stable_matching(self, candidate_preferences: Dict, internship_preferences: Dict,
-                           candidates: List[Dict], apply_quotas: bool = True) -> Dict:
+    def run_stable_matching(self, candidate_preferences: Dict, internship_preferences: Dict, 
+                           candidates: List[Dict], apply_quotas: bool = True, max_iterations: int = 1000) -> Dict:
         """
         Execute Gale-Shapley stable matching algorithm with capacity constraints
         
