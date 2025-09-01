@@ -1,0 +1,53 @@
+SARAH CHEN
+Email: sarah.chen@email.com
+Phone: (555) 234-5678
+LinkedIn: linkedin.com/in/sarahchen
+
+EDUCATION
+Stanford University
+Bachelor of Science in Computer Science
+GPA: 3.9/4.0
+Expected Graduation: June 2025
+
+SKILLS
+Programming Languages: Java (Advanced), Python (Intermediate), JavaScript (Intermediate)
+Backend Development: Spring Boot, Spring Security, Hibernate, JPA
+Microservices: Docker, Kubernetes, RESTful APIs, GraphQL
+Cloud & DevOps: AWS, Azure, CI/CD, Jenkins, Git
+
+EXPERIENCE
+Software Engineer Intern - TechCorp (Summer 2024)
+- Developed microservices using Spring Boot and deployed to AWS
+- Implemented authentication and authorization using Spring Security
+- Created RESTful APIs serving 10,000+ daily requests
+- Collaborated with frontend team to integrate APIs with React application
+
+Backend Developer - Stanford CS Department (2023-2024)
+- Built backend systems for university course management platform
+- Implemented database design and optimization using PostgreSQL
+- Developed automated testing suite achieving 95% code coverage
+
+PROJECTS
+E-commerce Microservices Platform
+- Designed and implemented microservices architecture using Spring Boot
+- Integrated payment processing and inventory management systems
+- Deployed using Docker containers and Kubernetes orchestration
+- Handled 50,000+ concurrent users with 99.9% uptime
+
+Real-time Chat Application
+- Built WebSocket-based chat system using Spring WebSocket
+- Implemented user authentication and message encryption
+- Deployed on AWS with auto-scaling capabilities
+
+Inventory Management System
+- Developed RESTful API for inventory tracking and management
+- Implemented caching using Redis for improved performance
+- Created comprehensive API documentation using Swagger
+
+AWARDS & HONORS
+- Stanford Dean's List (2022-2024)
+- Google Women Techmakers Scholarship
+- ACM Programming Competition Finalist
+
+LANGUAGES
+English (Native), Mandarin (Native), Japanese (Conversational)

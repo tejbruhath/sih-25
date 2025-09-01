@@ -1,0 +1,52 @@
+ALEX JOHNSON
+Email: alex.johnson@email.com
+Phone: (555) 123-4567
+LinkedIn: linkedin.com/in/alexjohnson
+
+EDUCATION
+Massachusetts Institute of Technology (MIT)
+Bachelor of Science in Computer Science
+GPA: 3.8/4.0
+Expected Graduation: May 2025
+
+SKILLS
+Programming Languages: Python (Advanced), SQL (Intermediate), R (Intermediate)
+Machine Learning: TensorFlow, Scikit-learn, Pandas, NumPy, Matplotlib
+Data Analysis: Statistical Analysis, Data Visualization, Predictive Modeling
+Tools & Technologies: Git, Docker, AWS, Jupyter Notebooks, Tableau
+
+EXPERIENCE
+Data Science Intern - TechStart Inc. (Summer 2024)
+- Developed predictive models using Python and scikit-learn achieving 87% accuracy
+- Analyzed customer behavior data to improve product recommendations
+- Created automated data processing pipelines reducing processing time by 40%
+- Collaborated with cross-functional teams to implement data-driven solutions
+
+Research Assistant - MIT Computer Science Department (2023-2024)
+- Conducted research on deep learning applications in computer vision
+- Implemented and optimized neural network architectures
+- Published findings in university research symposium
+
+PROJECTS
+Customer Churn Prediction Model
+- Built machine learning model to predict customer churn with 85% accuracy
+- Used ensemble methods and feature engineering techniques
+- Deployed model using Flask API for real-time predictions
+
+Data Visualization Dashboard
+- Created interactive dashboards using Python and Plotly
+- Visualized complex datasets for business stakeholders
+- Implemented automated data refresh and reporting system
+
+Stock Price Prediction System
+- Developed LSTM neural network for stock price forecasting
+- Integrated real-time data feeds and automated trading signals
+- Achieved 12% improvement over baseline models
+
+AWARDS & HONORS
+- Dean's List (2022-2024)
+- MIT Undergraduate Research Award
+- Data Science Competition Winner (2023)
+
+LANGUAGES
+English (Native), Spanish (Conversational)

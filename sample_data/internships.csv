@@ -1,0 +1,51 @@
+id,title,company,description,required_skills,spots_available,salary
+1,Data Science Intern,TechCorp,"Build machine learning models for customer analytics and develop predictive algorithms for business insights","Python, Machine Learning, Statistics",3,5000
+2,Software Engineer Intern,StartupXYZ,"Develop web applications using modern frameworks and contribute to full-stack development projects","JavaScript, React, Node.js",2,4500
+3,AI Research Intern,AI Labs,"Research and implement computer vision algorithms for autonomous systems and robotics applications","Python, AI, Computer Vision",2,6000
+4,Backend Developer Intern,BigTech,"Design and implement scalable backend systems using microservices architecture","Java, Database, System Design",4,5500
+5,Frontend Developer Intern,WebSolutions,"Create responsive user interfaces and optimize web performance for mobile and desktop platforms","JavaScript, HTML, CSS",2,4000
+6,Machine Learning Engineer,DataFlow,"Develop and deploy ML models in production environments with focus on model optimization","Python, TensorFlow, MLOps",2,6500
+7,Full Stack Developer,InnovateTech,"Build end-to-end web applications and contribute to both frontend and backend development","JavaScript, Python, Full Stack",3,4800
+8,DevOps Engineer,CloudFirst,"Implement CI/CD pipelines and manage cloud infrastructure using modern DevOps practices","Docker, Kubernetes, AWS",2,5200
+9,Mobile App Developer,MobileWorks,"Develop cross-platform mobile applications using React Native and native development","JavaScript, React Native, Mobile",2,4700
+10,Data Engineer,DataStream,"Build data pipelines and ETL processes for large-scale data processing and analytics","Python, SQL, Big Data",3,5400
+11,Cybersecurity Intern,SecurityCorp,"Analyze security vulnerabilities and implement security measures for enterprise applications","Cybersecurity, Network Security, Python",2,5800
+12,Product Manager Intern,ProductHub,"Define product requirements and work with engineering teams to deliver user-centric solutions","Product Management, Analytics, Communication",2,5200
+13,UX/UI Designer,DesignStudio,"Create user-centered design solutions and conduct user research for digital products","UI/UX Design, Figma, User Research",2,4500
+14,Blockchain Developer,CryptoTech,"Develop smart contracts and blockchain applications using Ethereum and other platforms","Blockchain, Solidity, Web3",1,7000
+15,Game Developer,GameStudio,"Create interactive games and develop game mechanics using Unity and C#","C#, Unity, Game Development",2,4200
+16,Cloud Architect,CloudScale,"Design and implement cloud-native solutions using AWS, Azure, and Google Cloud","Cloud Computing, Architecture, AWS",1,7500
+17,Data Analyst,AnalyticsPro,"Analyze business data and create insights through statistical analysis and data visualization","Python, SQL, Data Analysis",4,4200
+18,Network Engineer,NetCorp,"Design and maintain network infrastructure and troubleshoot network issues","Networking, Cisco, Network Security",2,4800
+19,Embedded Systems Engineer,EmbedTech,"Develop embedded software for IoT devices and hardware integration","C++, Embedded Systems, IoT",2,5600
+20,Quality Assurance Engineer,TestPro,"Design and execute test plans for software applications and ensure quality standards","Testing, Automation, Selenium",3,4400
+21,Database Administrator,DataBase,"Manage and optimize database systems and ensure data integrity and security","SQL, Database Management, Performance",2,5000
+22,API Developer,APICorp,"Design and develop RESTful APIs and microservices for web and mobile applications","API Development, REST, Node.js",2,4800
+23,Computer Vision Engineer,VisionTech,"Develop computer vision algorithms for image and video processing applications","Python, OpenCV, Computer Vision",2,6200
+24,Natural Language Processing Engineer,NLPLabs,"Build NLP models for text analysis, sentiment analysis, and language understanding","Python, NLP, BERT",2,6000
+25,Robotics Engineer,RobotCorp,"Develop robotic systems and control algorithms for automation and autonomous systems","Python, Robotics, ROS",1,6800
+26,Financial Technology Developer,FinTech,"Build financial applications and trading algorithms for investment and banking systems","Python, Financial Technology, Algorithms",2,6500
+27,Healthcare Technology Developer,HealthTech,"Develop healthcare applications and medical software for patient care and diagnostics","Python, Healthcare, Medical Imaging",2,5800
+28,Environmental Data Analyst,GreenTech,"Analyze environmental data and develop solutions for sustainability and climate monitoring","Python, Environmental Science, GIS",2,4600
+29,Supply Chain Analyst,SupplyChain,"Optimize supply chain operations using data analysis and predictive modeling","Python, Supply Chain, Analytics",2,4800
+30,Marketing Technology Developer,MarTech,"Build marketing automation tools and customer analytics platforms","JavaScript, Marketing Analytics, Automation",2,4500
+31,Educational Technology Developer,EdTech,"Develop educational software and learning management systems for online education","JavaScript, Educational Technology, LMS",3,4200
+32,Internet of Things Developer,IoTWorks,"Build IoT applications and develop connected device solutions","Python, IoT, Embedded Systems",2,5200
+33,Augmented Reality Developer,ARStudio,"Create AR applications and develop immersive experiences for mobile and wearable devices","JavaScript, AR, Computer Vision",1,6500
+34,Virtual Reality Developer,VRCorp,"Develop VR applications and create immersive virtual environments","C#, Unity, VR Development",2,5800
+35,Quantum Computing Researcher,QuantumLabs,"Research quantum algorithms and develop quantum computing applications","Python, Quantum Computing, Algorithms",1,8000
+36,Aerospace Software Engineer,AeroTech,"Develop software for aerospace applications and flight control systems","C++, Aerospace, Real-time Systems",2,7200
+37,Biotechnology Developer,BioTech,"Develop software for biological research and genetic analysis applications","Python, Bioinformatics, Biology",2,5600
+38,Energy Systems Analyst,EnergyCorp,"Analyze energy data and develop solutions for renewable energy optimization","Python, Energy Systems, Analytics",2,5000
+39,Autonomous Vehicle Developer,AutoDrive,"Develop software for autonomous vehicles and self-driving car systems","C++, Computer Vision, Robotics",1,7500
+40,Space Technology Developer,SpaceTech,"Develop software for satellite systems and space exploration applications","Python, Space Technology, Satellite",1,7800
+41,Pharmaceutical Data Analyst,PharmaTech,"Analyze pharmaceutical data and develop drug discovery algorithms","Python, Pharmaceutical Research, Statistics",2,5400
+42,Agricultural Technology Developer,AgriTech,"Develop smart farming solutions and precision agriculture applications","Python, IoT, Agricultural Technology",2,4800
+43,Digital Art Developer,CreativeTech,"Create digital art tools and develop creative coding applications","Python, Creative Coding, Digital Art",2,4200
+44,Social Media Analytics Developer,SocialTech,"Build social media analysis tools and sentiment analysis platforms","Python, Social Media Analytics, NLP",2,4600
+45,E-commerce Developer,EcommerceCorp,"Develop e-commerce platforms and payment processing systems","JavaScript, E-commerce, Payment Processing",3,4800
+46,Real Estate Technology Developer,RealEstateTech,"Build real estate platforms and property management systems","JavaScript, Real Estate, Property Management",2,4500
+47,Entertainment Technology Developer,EntertainmentTech,"Develop entertainment applications and media streaming platforms","JavaScript, Entertainment, Media Streaming",2,4400
+48,Sports Analytics Developer,SportsTech,"Build sports analytics platforms and performance tracking systems","Python, Sports Analytics, Statistics",2,4600
+49,Legal Technology Developer,LegalTech,"Develop legal software and contract analysis tools","Python, Legal Technology, Document Analysis",2,5200
+50,Non-Profit Technology Developer,NonProfitTech,"Build technology solutions for non-profit organizations and social impact projects","JavaScript, Non-Profit, Social Impact",2,4000

@@ -1,8 +1,0 @@
-internship_id,company_name,job_title,sector,location,capacity,description_filename
-I001,TechCorp India,Software Engineering Intern,Technology,Bangalore,3,job1.txt
-I002,FinanceMax,Data Analyst Intern,Finance,Mumbai,2,job2.txt
-I003,GreenEnergy Solutions,Research Intern,Renewable Energy,Pune,2,job3.txt
-I004,HealthTech Innovations,AI/ML Intern,Healthcare,Hyderabad,2,job4.txt
-I005,EduTech Pro,Product Management Intern,Education,Delhi,2,job5.txt
-I006,AgriSmart,Agricultural Tech Intern,Agriculture,Chennai,2,job6.txt
-I007,StartupHub,Business Development Intern,Consulting,Bangalore,2,job7.txt

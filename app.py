@@ -1,243 +1,259 @@
-"""
-PMIS-AI Engine Flask Application
-Main web server for the AI-powered internship matching system
-"""
-
-from flask import Flask, request, jsonify, render_template, send_file
-import os
-import sys
+from flask import Flask, jsonify, render_template, request, flash, redirect, url_for
+from matching_algorithm import MatchingAlgorithm
+import hashlib
 import json
-import pandas as pd
+import os
 from datetime import datetime
-import traceback
-
-# Add src directory to path for imports
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
-
-from src.resume_parser import ResumeParser
-from src.ranking_engine import RankingEngine
-from src.matching_algorithm import StableMatchingAlgorithm
-from src.blockchain_layer import BlockchainTrustLayer
-from src.unified_ai_engine import UnifiedAIEngine
+from werkzeug.utils import secure_filename
+import pandas as pd
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'pmis-ai-engine-2025'
+app.secret_key = 'your-secret-key-here'  # Required for flash messages
 
-# Initialize components
-parser = ResumeParser()
-engine = RankingEngine()
-matcher = StableMatchingAlgorithm()
-ai_engine = UnifiedAIEngine()  # New unified AI-native engine
+# Initialize the matching algorithm
+matcher = MatchingAlgorithm()
 
-# Global variables for storing processed data
-processed_candidates = []
-processed_internships = []
-allocation_results = {}
+# Configure upload settings
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS_CSV = {'csv'}
+ALLOWED_EXTENSIONS_RESUME = {'txt', 'pdf'}
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Create upload directory if it doesn't exist
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(os.path.join(UPLOAD_FOLDER, 'resumes'), exist_ok=True)
+
+def allowed_file(filename, allowed_extensions):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in allowed_extensions
 
 @app.route('/')
-def home():
-    """Main dashboard page"""
+def index():
+    """Serve the main page"""
     return render_template('index.html')
 
-@app.route('/api/status')
-def api_status():
-    """API health check"""
-    return jsonify({
-        'status': 'active',
-        'message': 'PMIS-AI Engine is running',
-        'timestamp': datetime.now().isoformat(),
-        'components': {
-            'resume_parser': 'ready',
-            'ranking_engine': 'ready',
-            'matching_algorithm': 'ready'
-        }
-    })
+@app.route('/test')
+def test():
+    """Test route"""
+    return "Test route working!"
 
-@app.route('/api/load_data', methods=['POST'])
-def load_data():
-    """Load and process candidate and internship data using AI-native pipeline"""
-    global processed_candidates, processed_internships
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_files():
+    """Handle file uploads"""
+    if request.method == 'POST':
+        # Check if files were uploaded
+        if 'candidates_file' not in request.files or 'internships_file' not in request.files:
+            flash('Please upload both candidates.csv and internships.csv files', 'error')
+            return redirect(request.url)
+        
+        candidates_file = request.files['candidates_file']
+        internships_file = request.files['internships_file']
+        resume_files = request.files.getlist('resume_files')
+        
+        # Check if files are selected
+        if candidates_file.filename == '' or internships_file.filename == '':
+            flash('Please select files to upload', 'error')
+            return redirect(request.url)
+        
+        # Validate file types
+        if not allowed_file(candidates_file.filename, ALLOWED_EXTENSIONS_CSV):
+            flash('Candidates file must be a CSV file', 'error')
+            return redirect(request.url)
+        
+        if not allowed_file(internships_file.filename, ALLOWED_EXTENSIONS_CSV):
+            flash('Internships file must be a CSV file', 'error')
+            return redirect(request.url)
+        
+        try:
+            # Save uploaded files
+            candidates_path = os.path.join(app.config['UPLOAD_FOLDER'], 'candidates.csv')
+            internships_path = os.path.join(app.config['UPLOAD_FOLDER'], 'internships.csv')
+            
+            candidates_file.save(candidates_path)
+            internships_file.save(internships_path)
+            
+            # Save resume files
+            resume_paths = []
+            for resume_file in resume_files:
+                if resume_file.filename != '':
+                    if allowed_file(resume_file.filename, ALLOWED_EXTENSIONS_RESUME):
+                        filename = secure_filename(resume_file.filename)
+                        resume_path = os.path.join(app.config['UPLOAD_FOLDER'], 'resumes', filename)
+                        resume_file.save(resume_path)
+                        resume_paths.append(resume_path)
+                    else:
+                        flash(f'Resume file {resume_file.filename} has invalid extension. Use .txt or .pdf', 'error')
+            
+            # Validate CSV files
+            try:
+                candidates_df = pd.read_csv(candidates_path)
+                internships_df = pd.read_csv(internships_path)
+                
+                # Check required columns
+                required_candidate_cols = ['id', 'name', 'email', 'skills', 'experience_years', 'gpa', 'university']
+                required_internship_cols = ['id', 'title', 'company', 'description', 'required_skills', 'spots_available', 'salary']
+                
+                missing_candidate_cols = [col for col in required_candidate_cols if col not in candidates_df.columns]
+                missing_internship_cols = [col for col in required_internship_cols if col not in internships_df.columns]
+                
+                if missing_candidate_cols:
+                    flash(f'Missing columns in candidates.csv: {", ".join(missing_candidate_cols)}', 'error')
+                    return redirect(request.url)
+                
+                if missing_internship_cols:
+                    flash(f'Missing columns in internships.csv: {", ".join(missing_internship_cols)}', 'error')
+                    return redirect(request.url)
+                
+                flash(f'Files uploaded successfully! Found {len(candidates_df)} candidates and {len(internships_df)} internships', 'success')
+                
+            except Exception as e:
+                flash(f'Error reading CSV files: {str(e)}', 'error')
+                return redirect(request.url)
+            
+        except Exception as e:
+            flash(f'Error saving files: {str(e)}', 'error')
+            return redirect(request.url)
+        
+        return redirect(url_for('index'))
     
-    try:
-        # Use AI-native data processing pipeline
-        candidates_file = "data/candidates.csv"
-        internships_file = "data/internships.csv"
-        
-        if not os.path.exists(candidates_file) or not os.path.exists(internships_file):
-            return jsonify({
-                'success': False,
-                'message': 'Data files not found. Please ensure candidates.csv and internships.csv exist in data/ directory'
-            })
-        
-        # Process data with AI-native pipeline
-        processed_candidates = ai_engine.process_candidate_data_ai_native(candidates_file)
-        processed_internships = ai_engine.process_internship_data_ai_native(internships_file)
-        
-        # Calculate AI processing statistics
-        ai_candidates = sum(1 for c in processed_candidates if c.get('ai_processed', False))
-        ai_internships = sum(1 for i in processed_internships if i.get('ai_processed', False))
-        
-        return jsonify({
-            'success': True,
-            'message': f'AI-native data loaded: {len(processed_candidates)} candidates, {len(processed_internships)} internships',
-            'stats': {
-                'candidates_loaded': len(processed_candidates),
-                'internships_loaded': len(processed_internships),
-                'resumes_parsed': ai_candidates,
-                'total_skills_found': sum(len(c.get('skills', [])) for c in processed_candidates)
-            },
-            'ai_stats': {
-                'candidates_ai_processed': ai_candidates,
-                'internships_ai_processed': ai_internships,
-                'ai_processing_rate_candidates': round(ai_candidates/len(processed_candidates)*100, 1) if processed_candidates else 0,
-                'ai_processing_rate_internships': round(ai_internships/len(processed_internships)*100, 1) if processed_internships else 0
-            }
-        })
-        
-    except Exception as e:
-        print(f"❌ Error loading data: {str(e)}")
-        traceback.print_exc()
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+    return render_template('upload.html')
 
-@app.route('/api/run_allocation', methods=['POST'])
+@app.route('/run_allocation', methods=['POST'])
 def run_allocation():
-    """Run the complete AI-native allocation algorithm"""
-    global processed_candidates, processed_internships, allocation_results
-    
+    """
+    Main API endpoint that runs the complete allocation process
+    """
     try:
-        if not processed_candidates or not processed_internships:
-            return jsonify({
-                'success': False,
-                'message': 'Please load candidate and internship data first'
-            })
+        # Check if uploaded files exist, otherwise use default data
+        candidates_path = os.path.join(app.config['UPLOAD_FOLDER'], 'candidates.csv')
+        internships_path = os.path.join(app.config['UPLOAD_FOLDER'], 'internships.csv')
         
-        # Use unified AI-native engine for allocation
-        results = ai_engine.run_ai_native_allocation()
-        allocation_results = results
+        if not os.path.exists(candidates_path) or not os.path.exists(internships_path):
+            # Use default data
+            candidates_path = "data/candidates.csv"
+            internships_path = "data/internships.csv"
         
-        # Extract ML insights for response
-        ml_insights = results.get('ml_insights', {})
-        feature_importance = ml_insights.get('feature_importance', {})
-        confidence_scores = ml_insights.get('ml_confidence_scores', {})
+        # Run the complete matching process
+        results = matcher.run_complete_matching(candidates_path, internships_path)
+        
+        # Generate blockchain hash of the results
+        results_json = json.dumps(results, sort_keys=True, default=str)
+        blockchain_hash = hashlib.sha256(results_json.encode()).hexdigest()
+        
+        # Add timestamp and hash to results
+        results['timestamp'] = datetime.now().isoformat()
+        results['blockchain_hash'] = blockchain_hash
+        
+        # Save results to file for audit trail
+        timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        results_filename = f"results/allocation_results_{timestamp_str}.json"
+        
+        with open(results_filename, 'w') as f:
+            json.dump(results, f, indent=2, default=str)
+        
+        results['results_file'] = results_filename
         
         return jsonify({
             'success': True,
-            'message': 'AI-native allocation completed successfully',
-            'results': {
-                'total_matches': len(results['matches']),
-                'quota_compliance': results['quota_stats']['meets_rural_quota'],
-                'rural_percentage': results['quota_stats']['rural_percentage'],
-                'iterations': results['iterations'],
-                'ai_native_processing': results.get('ai_native_processing', True),
-                'ml_model_trained': results.get('model_performance', {}).get('ml_model_trained', False),
-                'average_confidence': confidence_scores.get('average_confidence', 0),
-                'top_features': list(feature_importance.keys())[:5] if feature_importance else [],
-                'candidates_ai_processed': results.get('model_performance', {}).get('candidates_ai_processed', 0),
-                'internships_ai_processed': results.get('model_performance', {}).get('internships_ai_processed', 0)
-            }
+            'message': 'Allocation completed successfully',
+            'data': results
         })
         
     except Exception as e:
-        print(f"❌ Error in allocation: {str(e)}")
-        traceback.print_exc()
         return jsonify({
             'success': False,
-            'error': str(e)
+            'message': f'Error during allocation: {str(e)}',
+            'data': None
         }), 500
 
-@app.route('/api/get_results')
-def get_results():
-    """Get the latest allocation results"""
-    if not allocation_results:
-        return jsonify({
-            'success': False,
-            'error': 'No allocation results available'
-        }), 404
-    
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
     return jsonify({
-        'success': True,
-        'results': allocation_results
+        'status': 'healthy',
+        'timestamp': datetime.now().isoformat(),
+        'service': 'PMIS AI Allocation Engine'
     })
 
-@app.route('/api/download_results')
-def download_results():
-    """Download allocation results as CSV"""
-    if not allocation_results or 'output_file' not in allocation_results:
-        return jsonify({
-            'success': False,
-            'error': 'No results file available'
-        }), 404
-    
-    output_file = allocation_results['output_file']
-    if os.path.exists(output_file):
-        return send_file(output_file, as_attachment=True)
-    else:
-        return jsonify({
-            'success': False,
-            'error': 'Results file not found'
-        }), 404
-
-@app.route('/api/blockchain_hash', methods=['POST'])
-def generate_blockchain_hash():
-    """Generate blockchain hash for allocation results"""
+@app.route('/api/candidates', methods=['GET'])
+def get_candidates():
+    """Get all candidates"""
     try:
-        if not allocation_results:
+        # Check if uploaded file exists, otherwise use default
+        candidates_path = os.path.join(app.config['UPLOAD_FOLDER'], 'candidates.csv')
+        if not os.path.exists(candidates_path):
+            candidates_path = "data/candidates.csv"
+        
+        candidates_df = pd.read_csv(candidates_path)
+        return jsonify({
+            'success': True,
+            'data': candidates_df.to_dict('records')
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Error loading candidates: {str(e)}'
+        }), 500
+
+@app.route('/api/internships', methods=['GET'])
+def get_internships():
+    """Get all internships"""
+    try:
+        # Check if uploaded file exists, otherwise use default
+        internships_path = os.path.join(app.config['UPLOAD_FOLDER'], 'internships.csv')
+        if not os.path.exists(internships_path):
+            internships_path = "data/internships.csv"
+        
+        internships_df = pd.read_csv(internships_path)
+        return jsonify({
+            'success': True,
+            'data': internships_df.to_dict('records')
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': f'Error loading internships: {str(e)}'
+        }), 500
+
+@app.route('/api/verify_hash', methods=['POST'])
+def verify_hash():
+    """Verify blockchain hash of results"""
+    try:
+        data = request.get_json()
+        results_data = data.get('results_data')
+        provided_hash = data.get('hash')
+        
+        if not results_data or not provided_hash:
             return jsonify({
                 'success': False,
-                'error': 'No allocation results to hash'
+                'message': 'Missing required data'
             }), 400
         
-        import hashlib
-        import json
+        # Calculate hash from provided data
+        calculated_hash = hashlib.sha256(json.dumps(results_data, sort_keys=True).encode()).hexdigest()
         
-        # Create hash of the allocation results
-        hash_data = {
-            'matches': allocation_results['matches'],
-            'quota_stats': allocation_results['quota_stats'],
-            'timestamp': allocation_results['timestamp'],
-            'total_matches': len(allocation_results['matches'])
-        }
-        
-        # Convert to JSON string and hash
-        data_string = json.dumps(hash_data, sort_keys=True).encode('utf-8')
-        allocation_hash = hashlib.sha256(data_string).hexdigest()
-        
-        # Store hash in results
-        allocation_results['blockchain_hash'] = allocation_hash
+        # Verify hash
+        is_valid = calculated_hash == provided_hash
         
         return jsonify({
             'success': True,
-            'message': 'Blockchain hash generated successfully',
-            'hash': allocation_hash,
-            'hash_data': hash_data
+            'is_valid': is_valid,
+            'calculated_hash': calculated_hash,
+            'provided_hash': provided_hash
         })
         
     except Exception as e:
-        print(f"❌ Error generating hash: {str(e)}")
         return jsonify({
             'success': False,
-            'error': str(e)
+            'message': f'Error verifying hash: {str(e)}'
         }), 500
 
-@app.errorhandler(404)
-def not_found(error):
-    return jsonify({'error': 'Endpoint not found'}), 404
-
-@app.errorhandler(500)
-def internal_error(error):
-    return jsonify({'error': 'Internal server error'}), 500
-
 if __name__ == '__main__':
-    print("🚀 Starting PMIS-AI Engine...")
-    print("📊 Dashboard: http://localhost:5000")
-    print("🔗 API Status: http://localhost:5000/api/status")
-    
-    # Create necessary directories
-    os.makedirs('data', exist_ok=True)
+    # Create templates directory if it doesn't exist
     os.makedirs('templates', exist_ok=True)
-    os.makedirs('static', exist_ok=True)
+    
+    print("Starting PMIS AI Allocation Engine...")
+    print("Server will be available at: http://localhost:5000")
     
     app.run(debug=True, host='0.0.0.0', port=5000)

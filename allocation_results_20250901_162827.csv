@@ -1,4 +1,0 @@
-candidate_id,candidate_name,age,social_category,is_rural,internship_id,company_name,job_title,location,sector
-1,Arjun Sharma,22,General,False,1,TechCorp India,Software Developer Intern,Bangalore,Technology
-2,Priya Patel,23,OBC,True,2,Green Energy Solutions,Renewable Energy Analyst,Mumbai,Energy
-3,Rahul Kumar,21,SC,True,3,FinanceFirst,Financial Analyst Intern,Delhi,Finance

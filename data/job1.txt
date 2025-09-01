@@ -1,43 +1,30 @@
-TechCorp India - Software Developer Intern
+DATA SCIENCE INTERN
+Company: TechCorp
+Location: San Francisco, CA
+Duration: 12 weeks
 
-COMPANY OVERVIEW:
-TechCorp India is a leading technology company specializing in enterprise software solutions, cloud computing, and artificial intelligence. We serve Fortune 500 companies across various industries.
+JOB DESCRIPTION
+We are looking for a Data Science Intern to join our analytics team. You will work on real-world problems involving customer data analysis and machine learning model development.
 
-JOB DESCRIPTION:
-We are seeking a motivated Software Developer Intern to join our development team. The intern will work on cutting-edge projects involving web development, machine learning, and cloud technologies.
+RESPONSIBILITIES
+- Build and deploy machine learning models for customer analytics
+- Perform exploratory data analysis on large datasets
+- Create data visualizations and reports
+- Collaborate with cross-functional teams
 
-RESPONSIBILITIES:
-- Develop and maintain web applications using modern frameworks
-- Collaborate with senior developers on machine learning projects
-- Write clean, efficient, and well-documented code
-- Participate in code reviews and agile development processes
-- Assist in database design and optimization
-- Work with cloud platforms (AWS, Azure) for deployment
+REQUIRED SKILLS
+- Python programming
+- Machine Learning algorithms
+- Statistical analysis
+- Data visualization
+- SQL for data querying
 
-REQUIRED SKILLS:
-- Programming: Python, Java, JavaScript
-- Web Development: React, Node.js, Flask/Django
-- Database: SQL, MongoDB
-- Version Control: Git
-- Problem-solving and analytical thinking
-- Strong communication skills
+PREFERRED QUALIFICATIONS
+- Experience with scikit-learn, pandas, numpy
+- Knowledge of deep learning frameworks
+- Experience with big data technologies
 
-PREFERRED SKILLS:
-- Machine Learning: scikit-learn, TensorFlow, PyTorch
-- Cloud Platforms: AWS, Azure, GCP
-- DevOps: Docker, Kubernetes
-- Data Analysis: pandas, numpy
-- Frontend: HTML, CSS, Bootstrap
-
-QUALIFICATIONS:
-- Currently pursuing B.Tech/B.E. in Computer Science or related field
-- CGPA: 7.5 and above
-- Strong foundation in data structures and algorithms
-- Experience with software development projects
-
-WHAT WE OFFER:
-- Hands-on experience with latest technologies
-- Mentorship from industry experts
-- Competitive stipend
-- Certificate of completion
-- Potential for full-time offer
+COMPENSATION
+- $5,000 monthly stipend
+- Free lunch and snacks
+- Networking opportunities

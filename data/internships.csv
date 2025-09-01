@@ -1,9 +1,6 @@
-internship_id,company_name,job_title,sector,location,capacity,description_filename
-1,TechCorp India,Software Developer Intern,Technology,Bangalore,3,job1.txt
-2,Green Energy Solutions,Renewable Energy Analyst,Energy,Mumbai,2,job2.txt
-3,FinanceFirst,Financial Analyst Intern,Finance,Delhi,2,job3.txt
-4,HealthTech Innovations,Healthcare Data Analyst,Healthcare,Hyderabad,2,job4.txt
-5,AgriTech Solutions,Agricultural Technology Intern,Agriculture,Pune,3,job5.txt
-6,EduTech Platform,Education Technology Intern,Education,Chennai,2,job6.txt
-7,Smart Cities Initiative,Urban Planning Intern,Government,Kolkata,2,job7.txt
-8,Digital Marketing Hub,Marketing Analytics Intern,Marketing,Gurgaon,3,job8.txt
+id,title,company,description,required_skills,spots_available,salary
+1,Data Science Intern,TechCorp,"Build machine learning models for customer analytics","Python, Machine Learning, Statistics",2,5000
+2,Software Engineer Intern,StartupXYZ,"Develop web applications using modern frameworks","JavaScript, React, Node.js",1,4500
+3,AI Research Intern,AI Labs,"Research and implement computer vision algorithms","Python, AI, Computer Vision",1,6000
+4,Backend Developer Intern,BigTech,"Design and implement scalable backend systems","Java, Database, System Design",2,5500
+5,Frontend Developer Intern,WebSolutions,"Create responsive user interfaces","JavaScript, HTML, CSS",1,4000

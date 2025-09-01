@@ -1,0 +1,51 @@
+id,name,email,skills,experience_years,gpa,university
+1,Alex Johnson,alex.johnson@email.com,"Python, Machine Learning, Data Analysis, SQL",2,3.8,MIT
+2,Sarah Chen,sarah.chen@email.com,"Java, Spring Boot, Microservices, Docker",3,3.9,Stanford
+3,Mike Rodriguez,mike.rodriguez@email.com,"JavaScript, React, Node.js, MongoDB",1,3.7,Harvard
+4,Emily Davis,emily.davis@email.com,"Python, Computer Vision, TensorFlow, OpenCV",2,3.6,UC Berkeley
+5,David Kim,david.kim@email.com,"C++, Algorithms, System Design, Linux",4,3.5,CMU
+6,Lisa Wang,lisa.wang@email.com,"Python, Data Science, Pandas, Scikit-learn",2,3.8,Columbia
+7,James Wilson,james.wilson@email.com,"JavaScript, Vue.js, TypeScript, AWS",2,3.7,NYU
+8,Maria Garcia,maria.garcia@email.com,"Python, Natural Language Processing, BERT, SpaCy",3,3.9,University of Washington
+9,Robert Brown,robert.brown@email.com,"Java, Android Development, Kotlin, Firebase",2,3.6,University of Michigan
+10,Anna Lee,anna.lee@email.com,"Python, Deep Learning, PyTorch, GPU Computing",1,3.8,Georgia Tech
+11,Thomas Anderson,thomas.anderson@email.com,"JavaScript, Angular, RxJS, GraphQL",3,3.7,University of Illinois
+12,Sophie Martin,sophie.martin@email.com,"Python, Bioinformatics, R, Statistics",2,3.9,Johns Hopkins
+13,Daniel Taylor,daniel.taylor@email.com,"C#, .NET, ASP.NET Core, Azure",2,3.6,University of Texas
+14,Emma Thompson,emma.thompson@email.com,"Python, Robotics, ROS, Computer Vision",1,3.8,Carnegie Mellon
+15,Christopher Lee,christopher.lee@email.com,"JavaScript, React Native, Mobile Development, Redux",2,3.7,University of Pennsylvania
+16,Jessica White,jessica.white@email.com,"Python, Cybersecurity, Network Security, Ethical Hacking",3,3.6,Georgia Tech
+17,Ryan Miller,ryan.miller@email.com,"Java, Big Data, Hadoop, Spark",2,3.8,University of Wisconsin
+18,Amanda Clark,amanda.clark@email.com,"Python, Web Scraping, Selenium, Beautiful Soup",1,3.9,University of Maryland
+19,Kevin Martinez,kevin.martinez@email.com,"JavaScript, Full Stack Development, Express.js, PostgreSQL",2,3.7,Rutgers
+20,Rachel Green,rachel.green@email.com,"Python, Data Engineering, Apache Airflow, ETL",3,3.6,University of Minnesota
+21,Michael Scott,michael.scott@email.com,"Java, Enterprise Development, Spring Security, JPA",4,3.5,University of Florida
+22,Ashley Johnson,ashley.johnson@email.com,"Python, Game Development, Unity, C#",1,3.8,University of California Irvine
+23,Brandon Davis,brandon.davis@email.com,"JavaScript, Progressive Web Apps, Service Workers, IndexedDB",2,3.7,University of Arizona
+24,Nicole Wilson,nicole.wilson@email.com,"Python, Financial Technology, Quantitative Analysis, NumPy",2,3.9,University of Chicago
+25,Jason Smith,jason.smith@email.com,"C++, Graphics Programming, OpenGL, DirectX",3,3.6,University of Utah
+26,Melissa Brown,melissa.brown@email.com,"Python, Healthcare Technology, Medical Imaging, DICOM",2,3.8,University of North Carolina
+27,Andrew Garcia,andrew.garcia@email.com,"JavaScript, Real-time Applications, WebSockets, Socket.io",1,3.7,University of Virginia
+28,Stephanie Lee,stephanie.lee@email.com,"Python, Climate Science, Data Visualization, Matplotlib",2,3.9,University of Colorado
+29,Brian Anderson,brian.anderson@email.com,"Java, Cloud Computing, Kubernetes, Microservices",3,3.6,University of Oregon
+30,Laura Chen,laura.chen@email.com,"Python, Social Media Analytics, Sentiment Analysis, NLTK",2,3.8,University of Southern California
+31,Eric Rodriguez,eric.rodriguez@email.com,"JavaScript, E-commerce Development, Payment Processing, Stripe",2,3.7,University of Miami
+32,Jennifer Kim,jennifer.kim@email.com,"Python, Supply Chain Optimization, Operations Research, PuLP",3,3.6,University of Tennessee
+33,Mark Thompson,mark.thompson@email.com,"C#, Xamarin, Cross-platform Development, Mobile Apps",1,3.8,University of Kentucky
+34,Vanessa White,vanessa.white@email.com,"Python, Educational Technology, Learning Analytics, EdTech",2,3.9,University of Connecticut
+35,Steven Miller,steven.miller@email.com,"JavaScript, IoT Development, Raspberry Pi, MQTT",3,3.7,University of Delaware
+36,Patricia Clark,patricia.clark@email.com,"Python, Digital Marketing Analytics, Google Analytics, SEO",2,3.6,University of New Hampshire
+37,Jonathan Martinez,jonathan.martinez@email.com,"Java, Blockchain Development, Smart Contracts, Ethereum",1,3.8,University of Rhode Island
+38,Heather Green,heather.green@email.com,"Python, Environmental Science, GIS, Remote Sensing",2,3.7,University of Vermont
+39,Gregory Scott,gregory.scott@email.com,"JavaScript, Virtual Reality, Three.js, WebXR",3,3.6,University of Maine
+40,Catherine Johnson,catherine.johnson@email.com,"Python, Pharmaceutical Research, Drug Discovery, Bioinformatics",2,3.9,University of Alaska
+41,Timothy Davis,timothy.davis@email.com,"C++, High-Frequency Trading, Algorithmic Trading, Financial Markets",4,3.5,University of Hawaii
+42,Rebecca Wilson,rebecca.wilson@email.com,"Python, Space Technology, Satellite Data, Astrophysics",2,3.8,University of Nevada
+43,Jeffrey Brown,jeffrey.brown@email.com,"JavaScript, Augmented Reality, AR.js, Computer Vision",1,3.7,University of Idaho
+44,Monica Garcia,monica.garcia@email.com,"Python, Agricultural Technology, Precision Farming, IoT",2,3.6,University of Montana
+45,Richard Lee,richard.lee@email.com,"Java, Quantum Computing, Quantum Algorithms, IBM Q",3,3.8,University of Wyoming
+46,Danielle Anderson,danielle.anderson@email.com,"Python, Renewable Energy, Solar Power Analytics, Energy Systems",2,3.7,University of South Dakota
+47,Anthony Chen,anthony.chen@email.com,"JavaScript, Autonomous Vehicles, Computer Vision, Robotics",1,3.9,University of North Dakota
+48,Michelle Rodriguez,michelle.rodriguez@email.com,"Python, Genomics, DNA Sequencing, Bioinformatics",2,3.6,University of Nebraska
+49,Raymond Kim,raymond.kim@email.com,"C++, Aerospace Engineering, Flight Simulation, Avionics",3,3.8,University of Kansas
+50,Victoria White,victoria.white@email.com,"Python, Digital Art, Creative Coding, Processing",1,3.7,University of Oklahoma
