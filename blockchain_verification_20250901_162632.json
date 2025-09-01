@@ -1,0 +1,70 @@
+{
+  "export_timestamp": "2025-09-01T16:26:32.598164",
+  "system_info": {
+    "version": "PMIS-AI-v1.0",
+    "hash_algorithm": "sha256"
+  },
+  "verification_records": [
+    {
+      "hash": "a9ad24fe193c72b9e8d81ad44e4ec212d2a69363fa3ebdc5891893ef5c34c45b",
+      "algorithm": "sha256",
+      "timestamp": "2025-09-01T16:26:32.598099",
+      "data_summary": {
+        "total_matches": 3,
+        "rural_percentage": 33.3,
+        "stability_verified": true
+      },
+      "hash_payload": {
+        "matches": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        },
+        "quota_stats": {
+          "rural_percentage": 33.3,
+          "total_allocated": 3,
+          "category_distribution": {
+            "General": 2,
+            "SC": 1
+          }
+        },
+        "total_matches": 3,
+        "algorithm_iterations": 5,
+        "is_stable": true,
+        "timestamp": "2025-09-01T16:26:32.598040",
+        "system_version": "PMIS-AI-v1.0"
+      }
+    },
+    {
+      "hash": "a9ad24fe193c72b9e8d81ad44e4ec212d2a69363fa3ebdc5891893ef5c34c45b",
+      "algorithm": "sha256",
+      "timestamp": "2025-09-01T16:26:32.598132",
+      "data_summary": {
+        "total_matches": 3,
+        "rural_percentage": 33.3,
+        "stability_verified": true
+      },
+      "hash_payload": {
+        "matches": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        },
+        "quota_stats": {
+          "rural_percentage": 33.3,
+          "total_allocated": 3,
+          "category_distribution": {
+            "General": 2,
+            "SC": 1
+          }
+        },
+        "total_matches": 3,
+        "algorithm_iterations": 5,
+        "is_stable": true,
+        "timestamp": "2025-09-01T16:26:32.598040",
+        "system_version": "PMIS-AI-v1.0"
+      }
+    }
+  ],
+  "total_records": 2
+}

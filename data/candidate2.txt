@@ -1,0 +1,38 @@
+Priya Patel
+Environmental Engineer | Sustainability Advocate
+
+EDUCATION:
+B.Tech Environmental Engineering, NIT Surat (2021-2025)
+CGPA: 8.2/10
+
+SKILLS:
+- Environmental Analysis: Air Quality Monitoring, Water Treatment
+- Programming: Python, R, MATLAB
+- Data Analysis: Statistical Analysis, Environmental Modeling
+- GIS: ArcGIS, QGIS, Remote Sensing
+- Renewable Energy: Solar, Wind Energy Systems
+- Project Management: Agile, Scrum
+
+EXPERIENCE:
+Environmental Consultant Intern at EcoSolutions (Summer 2024)
+- Conducted environmental impact assessments
+- Analyzed air and water quality data using statistical methods
+- Prepared compliance reports for government agencies
+
+PROJECTS:
+1. Smart Waste Management System
+   - Developed IoT-based waste monitoring solution
+   - Technologies: Arduino, Python, Machine Learning
+
+2. Renewable Energy Optimization
+   - Created predictive models for solar energy generation
+   - Technologies: Python, scikit-learn, pandas
+
+CERTIFICATIONS:
+- Certified Environmental Professional (CEP)
+- Google Analytics Certified
+- AWS Cloud Practitioner
+
+ACHIEVEMENTS:
+- Best Project Award in Environmental Engineering
+- Published paper on "Sustainable Urban Development"

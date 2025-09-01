@@ -1,0 +1,33 @@
+Arjun Sharma
+Software Engineer | Data Science Enthusiast
+
+EDUCATION:
+B.Tech Computer Science Engineering, IIT Delhi (2020-2024)
+CGPA: 8.5/10
+
+SKILLS:
+- Programming: Python, Java, C++, JavaScript
+- Data Science: Machine Learning, Deep Learning, Data Analysis
+- Web Development: React, Node.js, Flask, Django
+- Databases: MySQL, MongoDB, PostgreSQL
+- Tools: Git, Docker, AWS, TensorFlow, Pandas
+
+EXPERIENCE:
+Software Development Intern at StartupXYZ (Summer 2023)
+- Developed REST APIs using Python Flask
+- Implemented machine learning models for recommendation system
+- Collaborated with cross-functional teams using Agile methodology
+
+PROJECTS:
+1. E-commerce Recommendation System
+   - Built ML-based product recommendation using collaborative filtering
+   - Technologies: Python, scikit-learn, Flask, React
+
+2. Smart Traffic Management System
+   - Developed computer vision solution for traffic optimization
+   - Technologies: OpenCV, TensorFlow, Python
+
+ACHIEVEMENTS:
+- Winner of National Level Hackathon 2023
+- Published research paper on "AI in Smart Cities"
+- Google Summer of Code participant 2023

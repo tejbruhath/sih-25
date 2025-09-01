@@ -1,0 +1,38 @@
+Rahul Kumar
+Finance & Economics Graduate | Data Analytics Enthusiast
+
+EDUCATION:
+B.Com (Hons) Economics, Delhi University (2021-2024)
+Percentage: 85%
+
+SKILLS:
+- Financial Analysis: Financial Modeling, Risk Assessment, Portfolio Management
+- Programming: Python, R, SQL, Excel VBA
+- Data Analysis: Statistical Analysis, Econometrics, Time Series Analysis
+- Tools: Bloomberg Terminal, SPSS, Tableau, Power BI
+- Finance: Investment Banking, Corporate Finance, Market Research
+- Certifications: CFA Level 1, FRM Part 1
+
+EXPERIENCE:
+Financial Analyst Intern at HDFC Bank (Summer 2023)
+- Performed credit risk analysis for loan portfolios
+- Created financial models for investment decisions
+- Analyzed market trends and prepared investment reports
+
+PROJECTS:
+1. Stock Market Prediction Model
+   - Built LSTM neural network for stock price prediction
+   - Technologies: Python, TensorFlow, pandas, numpy
+
+2. Personal Finance Management App
+   - Developed web application for expense tracking
+   - Technologies: Flask, SQLite, JavaScript, Chart.js
+
+ACHIEVEMENTS:
+- Dean's List for Academic Excellence (3 consecutive years)
+- Winner of Inter-University Finance Case Competition
+- Research paper on "Cryptocurrency Market Analysis"
+
+EXTRACURRICULAR:
+- President of Economics Society
+- Volunteer at Financial Literacy Program for rural communities

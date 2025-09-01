@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMIS-AI Engine - Smart Internship Allocation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .card-hover {
+            transition: transform 0.2s;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .status-ready { background-color: #28a745; }
+        .status-processing { background-color: #ffc107; }
+        .status-error { background-color: #dc3545; }
+        .progress-container {
+            display: none;
+        }
+        .results-container {
+            display: none;
+        }
+        .quota-badge {
+            font-size: 0.8em;
+            padding: 0.25rem 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg gradient-bg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>
+                PMIS-AI Engine
+            </a>
+            <span class="navbar-text">
+                <span class="status-indicator status-ready"></span>
+                Smart Internship Allocation System
+            </span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- System Overview -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card card-hover">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-info-circle text-primary me-2"></i>
+                            System Overview
+                        </h5>
+                        <p class="card-text">
+                            The PMIS-AI Engine automates the PM Internship Scheme allocation process using advanced AI algorithms.
+                            It processes 6.2 lakh applications with fair, efficient, and transparent matching while ensuring 30% rural quota compliance.
+                        </p>
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <h6><i class="fas fa-file-alt text-info"></i> Resume Parsing</h6>
+                                <small>NLP-based skill extraction</small>
+                            </div>
+                            <div class="col-md-3">
+                                <h6><i class="fas fa-brain text-warning"></i> AI Matching</h6>
+                                <small>Semantic similarity scoring</small>
+                            </div>
+                            <div class="col-md-3">
+                                <h6><i class="fas fa-balance-scale text-success"></i> Stable Matching</h6>
+                                <small>Gale-Shapley algorithm</small>
+                            </div>
+                            <div class="col-md-3">
+                                <h6><i class="fas fa-shield-alt text-danger"></i> Blockchain Trust</h6>
+                                <small>Tamper-proof verification</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card card-hover">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-cogs me-2"></i>
+                            Control Panel
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="loadDataBtn" class="btn btn-primary btn-lg w-100 mb-3">
+                                    <i class="fas fa-upload me-2"></i>
+                                    Load & Process Data
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="runAllocationBtn" class="btn btn-success btn-lg w-100 mb-3" disabled>
+                                    <i class="fas fa-play me-2"></i>
+                                    Run Smart Allocation
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="generateHashBtn" class="btn btn-warning w-100" disabled>
+                                    <i class="fas fa-lock me-2"></i>
+                                    Generate Blockchain Hash
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button id="downloadBtn" class="btn btn-info w-100" disabled>
+                                    <i class="fas fa-download me-2"></i>
+                                    Download Results
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-container">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6><i class="fas fa-spinner fa-spin me-2"></i>Processing...</h6>
+                    <div class="progress">
+                        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                             role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <small id="progressText" class="text-muted">Initializing...</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Statistics -->
+        <div class="row mb-4" id="dataStats" style="display: none;">
+            <div class="col-md-3">
+                <div class="card text-center card-hover">
+                    <div class="card-body">
+                        <h3 id="candidatesCount" class="text-primary">0</h3>
+                        <p class="mb-0">Candidates</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center card-hover">
+                    <div class="card-body">
+                        <h3 id="internshipsCount" class="text-info">0</h3>
+                        <p class="mb-0">Internships</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center card-hover">
+                    <div class="card-body">
+                        <h3 id="resumesParsed" class="text-success">0</h3>
+                        <p class="mb-0">Resumes Parsed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center card-hover">
+                    <div class="card-body">
+                        <h3 id="skillsFound" class="text-warning">0</h3>
+                        <p class="mb-0">Skills Found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Container -->
+        <div class="results-container">
+            <div class="row">
+                <!-- Allocation Summary -->
+                <div class="col-md-6 mb-4">
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <h6><i class="fas fa-chart-pie me-2"></i>Allocation Summary</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h4 id="totalMatches" class="text-success">0</h4>
+                                    <small>Total Matches</small>
+                                </div>
+                                <div class="col-6">
+                                    <h4 id="algorithmIterations" class="text-info">0</h4>
+                                    <small>Algorithm Iterations</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span>Stability Check:</span>
+                                <span id="stabilityStatus" class="badge bg-secondary">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quota Compliance -->
+                <div class="col-md-6 mb-4">
+                    <div class="card card-hover">
+                        <div class="card-header">
+                            <h6><i class="fas fa-balance-scale me-2"></i>Quota Compliance</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span>Rural Quota (Target: 30%):</span>
+                                <span id="ruralPercentage" class="quota-badge badge bg-secondary">0%</span>
+                            </div>
+                            <div class="progress mb-3">
+                                <div id="ruralProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                            </div>
+                            <div id="categoryDistribution">
+                                <!-- Category distribution will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blockchain Verification -->
+            <div class="row" id="blockchainSection" style="display: none;">
+                <div class="col-12 mb-4">
+                    <div class="card card-hover border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h6><i class="fas fa-shield-alt me-2"></i>Blockchain Verification</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-2">Cryptographic Hash (SHA-256):</p>
+                            <code id="blockchainHash" class="d-block p-2 bg-light rounded">Not generated</code>
+                            <small class="text-muted mt-2 d-block">
+                                This hash provides tamper-proof verification of the allocation results.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Container -->
+        <div id="alertContainer"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Global variables
+        let dataLoaded = false;
+        let allocationComplete = false;
+
+        // Utility functions
+        function showAlert(message, type = 'info') {
+            const alertContainer = document.getElementById('alertContainer');
+            const alertId = 'alert-' + Date.now();
+            
+            const alertHTML = `
+                <div id="${alertId}" class="alert alert-${type} alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            `;
+            
+            alertContainer.innerHTML = alertHTML;
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                const alert = document.getElementById(alertId);
+                if (alert) {
+                    alert.remove();
+                }
+            }, 5000);
+        }
+
+        function updateProgress(percent, text) {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            progressBar.style.width = percent + '%';
+            progressText.textContent = text;
+        }
+
+        function showProgress() {
+            document.querySelector('.progress-container').style.display = 'block';
+        }
+
+        function hideProgress() {
+            document.querySelector('.progress-container').style.display = 'none';
+        }
+
+        // API functions
+        async function loadData() {
+            try {
+                showProgress();
+                updateProgress(20, 'Loading candidate and internship data...');
+                
+                const response = await fetch('/api/load_data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                updateProgress(60, 'Processing resumes and job descriptions...');
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    updateProgress(100, 'Data loaded successfully!');
+                    
+                    // Update statistics
+                    document.getElementById('candidatesCount').textContent = result.stats.candidates_loaded;
+                    document.getElementById('internshipsCount').textContent = result.stats.internships_loaded;
+                    document.getElementById('resumesParsed').textContent = result.stats.resumes_parsed;
+                    document.getElementById('skillsFound').textContent = result.stats.total_skills_found;
+                    
+                    // Show statistics
+                    document.getElementById('dataStats').style.display = 'flex';
+                    
+                    // Enable allocation button
+                    document.getElementById('runAllocationBtn').disabled = false;
+                    dataLoaded = true;
+                    
+                    showAlert('Data loaded and processed successfully! Ready for allocation.', 'success');
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                showAlert('Error loading data: ' + error.message, 'danger');
+            } finally {
+                hideProgress();
+            }
+        }
+
+        async function runAllocation() {
+            try {
+                showProgress();
+                updateProgress(10, 'Initializing AI models...');
+                
+                const response = await fetch('/api/run_allocation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                updateProgress(30, 'Generating preference lists...');
+                
+                // Simulate progress updates
+                setTimeout(() => updateProgress(50, 'Running stable matching algorithm...'), 1000);
+                setTimeout(() => updateProgress(70, 'Verifying stability and quota compliance...'), 2000);
+                setTimeout(() => updateProgress(90, 'Finalizing results...'), 3000);
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    updateProgress(100, 'Allocation completed successfully!');
+                    
+                    // Update results display
+                    document.getElementById('totalMatches').textContent = result.results.total_matches;
+                    document.getElementById('algorithmIterations').textContent = result.results.iterations;
+                    
+                    // Update stability status
+                    const stabilityBadge = document.getElementById('stabilityStatus');
+                    if (result.results.is_stable) {
+                        stabilityBadge.textContent = 'Stable ✓';
+                        stabilityBadge.className = 'badge bg-success';
+                    } else {
+                        stabilityBadge.textContent = 'Unstable ✗';
+                        stabilityBadge.className = 'badge bg-danger';
+                    }
+                    
+                    // Update quota compliance
+                    const ruralPercentage = result.results.quota_stats.rural_percentage;
+                    document.getElementById('ruralPercentage').textContent = ruralPercentage + '%';
+                    
+                    const ruralProgress = document.getElementById('ruralProgress');
+                    ruralProgress.style.width = Math.min(ruralPercentage, 100) + '%';
+                    
+                    if (ruralPercentage >= 30) {
+                        ruralProgress.className = 'progress-bar bg-success';
+                        document.getElementById('ruralPercentage').className = 'quota-badge badge bg-success';
+                    } else {
+                        ruralProgress.className = 'progress-bar bg-warning';
+                        document.getElementById('ruralPercentage').className = 'quota-badge badge bg-warning';
+                    }
+                    
+                    // Update category distribution
+                    const categoryDiv = document.getElementById('categoryDistribution');
+                    const categories = result.results.quota_stats.category_distribution;
+                    let categoryHTML = '<small class="text-muted">Category Distribution:</small><br>';
+                    
+                    for (const [category, count] of Object.entries(categories)) {
+                        categoryHTML += `<span class="badge bg-light text-dark me-1">${category}: ${count}</span>`;
+                    }
+                    categoryDiv.innerHTML = categoryHTML;
+                    
+                    // Show results container
+                    document.querySelector('.results-container').style.display = 'block';
+                    
+                    // Enable other buttons
+                    document.getElementById('generateHashBtn').disabled = false;
+                    document.getElementById('downloadBtn').disabled = false;
+                    allocationComplete = true;
+                    
+                    showAlert('Allocation completed successfully! ' + result.results.total_matches + ' matches created.', 'success');
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                showAlert('Error in allocation: ' + error.message, 'danger');
+            } finally {
+                hideProgress();
+            }
+        }
+
+        async function generateBlockchainHash() {
+            try {
+                const response = await fetch('/api/blockchain_hash', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    document.getElementById('blockchainHash').textContent = result.hash;
+                    document.getElementById('blockchainSection').style.display = 'block';
+                    
+                    showAlert('Blockchain hash generated successfully! Results are now tamper-proof.', 'success');
+                } else {
+                    throw new Error(result.error);
+                }
+            } catch (error) {
+                showAlert('Error generating hash: ' + error.message, 'danger');
+            }
+        }
+
+        function downloadResults() {
+            window.open('/api/download_results', '_blank');
+        }
+
+        // Event listeners
+        document.getElementById('loadDataBtn').addEventListener('click', loadData);
+        document.getElementById('runAllocationBtn').addEventListener('click', runAllocation);
+        document.getElementById('generateHashBtn').addEventListener('click', generateBlockchainHash);
+        document.getElementById('downloadBtn').addEventListener('click', downloadResults);
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showAlert('PMIS-AI Engine initialized. Click "Load & Process Data" to begin.', 'info');
+        });
+    </script>
+</body>
+</html>

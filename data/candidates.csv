@@ -1,0 +1,16 @@
+candidate_id,name,age,social_category,is_rural,resume_filename
+1,Arjun Sharma,22,General,False,candidate1.txt
+2,Priya Patel,23,OBC,True,candidate2.txt
+3,Rahul Kumar,21,SC,True,candidate3.txt
+4,Sneha Singh,24,General,False,candidate4.txt
+5,Amit Verma,22,ST,True,candidate5.txt
+6,Kavya Reddy,23,General,False,candidate6.txt
+7,Ravi Gupta,21,OBC,False,candidate7.txt
+8,Anita Yadav,24,SC,True,candidate8.txt
+9,Vikram Joshi,22,General,True,candidate9.txt
+10,Meera Agarwal,23,OBC,False,candidate10.txt
+11,Suresh Nair,21,General,True,candidate11.txt
+12,Pooja Mishra,24,SC,False,candidate12.txt
+13,Kiran Das,22,ST,True,candidate13.txt
+14,Neha Chopra,23,General,False,candidate14.txt
+15,Rohit Bansal,21,OBC,True,candidate15.txt
